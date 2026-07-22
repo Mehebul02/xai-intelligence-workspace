@@ -10,11 +10,14 @@ const OPTIONS: { id: Formation; label: string; desc: string }[] = [
   { id: "helix", label: "Sequenced", desc: "temporal windows across an entity" },
   { id: "cube", label: "Indexed", desc: "typed lattice, queryable in ms" },
   { id: "disc", label: "Surfaced", desc: "collapsed to the answer you asked for" },
-];
+]
 
-export function Signature() {
-  const [formation, setFormation] = useState<Formation>("sphere");
+import React from 'react';
+
+const Signature = () => {
+ const [formation, setFormation] = useState<Formation>("sphere");
   const hovering = useRef({ x: 0, y: 0, active: 0 });
+
 
   return (
     <section
@@ -100,4 +103,6 @@ export function Signature() {
       </div>
     </section>
   );
-}
+};
+
+export default Signature;
