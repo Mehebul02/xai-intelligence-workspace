@@ -2,14 +2,6 @@
 import { Canvas, useFrame } from "@react-three/fiber";
 import { useMemo, useRef, } from "react";
 import * as THREE from "three";
-
-/**
- * Signature interaction: a cluster of 900 nodes that reorganizes between
- * four topologies (sphere / helix / cube lattice / disc) driven by user
- * choice, and gently reacts to cursor. Formation transitions run through
- * a per-particle staggered easing in the shader.
- */
-
 type Formation = "sphere" | "helix" | "cube" | "disc";
 const COUNT = 900;
 
@@ -28,8 +20,6 @@ function buildTargets(): Record<Formation, Float32Array> {
     sphere[i * 3] = r * Math.sin(phi) * Math.cos(theta);
     sphere[i * 3 + 1] = r * Math.sin(phi) * Math.sin(theta);
     sphere[i * 3 + 2] = r * Math.cos(phi);
-
-    // helix
     const t = i / COUNT;
     const arm = i % 2 === 0 ? 0 : Math.PI;
     helix[i * 3] = Math.cos(t * Math.PI * 8 + arm) * (0.6 + t * 0.9);
