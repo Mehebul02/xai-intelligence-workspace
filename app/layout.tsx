@@ -27,7 +27,12 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased
+      `
+    }
+    data-new-gr-c-s-check-loaded="14.1313.0"
+    data-gr-ext-installed=""
+
     >
       <body className="min-h-full flex flex-col">
         <Header/>
